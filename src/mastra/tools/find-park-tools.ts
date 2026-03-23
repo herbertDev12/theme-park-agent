@@ -33,7 +33,7 @@ export const findQueueTimesParkTool = createTool({
   },
 });
 
-async function findParks(parkName: string, maxResults: number) {
+export async function findParks(parkName: string, maxResults: number) {
   const res = await fetch("https://queue-times.com/parks.json");
   if (!res.ok) throw new Error(`Queue-Times parks failed: ${res.status}`);
 
