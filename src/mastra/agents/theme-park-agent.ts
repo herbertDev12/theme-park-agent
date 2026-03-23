@@ -1,5 +1,6 @@
 import { Agent } from '@mastra/core/agent';
 import { Memory } from '@mastra/memory';
+import { findQueueTimesParkTool } from '../tools/find-park-tool';
 
 export const themeParkAgent = new Agent({
     id: "theme-park-agent",
@@ -17,5 +18,6 @@ export const themeParkAgent = new Agent({
     `,
     model: 'google/gemini-3-flash-preview',
     memory: new Memory(),
+    tools: { findQueueTimesParkTool },
 });
 
